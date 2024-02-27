@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    {% block title %} {{title}} {% endblock %}
+    {% block content %}
+        <div>
+            <h1>I am About Page</h1>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+            {% if output %}
+            <h3>Output from UserForm is {{output}} </h3>
+            {% endif %}
+        </div>
+    {% endblock %}

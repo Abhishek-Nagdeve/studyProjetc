@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+    {% block title %} {{title}} {% endblock %}
+    {% block content %}
+        {% if news %}
+            <h1> {{news.title}} </h1><br><br>
+            <p>
+                {{news.details}}
+            </p>
+        {% else %}
+            <p>
+                <h4>Unable to find News!!</h4>
+            </p>
+        {% endif %}
+    {% endblock %}

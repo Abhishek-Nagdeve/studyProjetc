@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+    <h1>User Form</h1>
+    <div class="col-12">
+        <form method="post" action="{% url 'submitform' %}">
+            {% csrf_token %}
+            <div class="my-3">
+                <label for="" class="form-lable">Value 1</label>
+                <input type="text" class="form-control" name="num1">
+            </div>
+            <div class="my-3">
+                <label for="" class="form-lable">Value 2</label>
+                <input type="text" class="form-control" name="num2">
+            </div>
+            <button class="my-3" type="submit">Submit</button>
+        </form>
+        <div>
+            <h1>Final Answer : {{finalans}} </h1>
+        </div>
+    </div>
+{% endblock %}

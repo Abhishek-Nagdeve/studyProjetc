@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+    <h1>User Form</h1>
+    <div class="col-12">
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <button class="my-3" type="submit">Submit</button>
+        </form>
+        <div>
+            <h1>Final Answer : {{finalans}} </h1>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>User Form</h1>
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+                <div class="my-3">
+                    <label for="" class="form-lable">Value 1</label>
+                    <input type="text" value="{{num1}}" class="form-control" name="num1">
+                </div>
+                <div>
+                    <select name="opr" id="">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                </div>
+                <div class="my-3">
+                    <label for="" class="form-lable">Value 2</label>
+                    <input type="text" value="{{num2}}" class="form-control" name="num2">
+                </div>
+                <button class="my-3" type="submit">Calculate</button>
+            </form>
+            <div>
+                <h1>Final Answer : {{finalans}} </h1>
+            </div>
+            {% if error %}
+            <div>
+                *values cannot be blank
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

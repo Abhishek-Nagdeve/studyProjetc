@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+    {% block title %} {{title}} {% endblock %}
+    {% block content %}
+        <marquee></marquee>
+        <h1>
+            i am Home Page!
+        </h1>
+        <p>
+            {{bdata}}
+        </p>
+        {% for n in list %}
+        <div>
+            {{forloop.counter}} {{n}}
+        </div>
+        {% endfor %}
+        <br>
+
+        {% for n in list %}
+        <div>
+            {{forloop.first}} {{n}}
+        </div>
+        {% endfor %}
+
+        <br>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in student_details %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td> {{student.name}} </td>
+                    <td> {{student.phone}} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% for a in servicedata %}
+            <div>
+                <h1>{{a.service_icon}}</h1><br>
+                <h3>{{a.service_title}}</h3><br>
+                <h5>{{a.service_des | capfirst | safe  }}</h5>
+            </div>
+        {% endfor %}
+
+        {% for n in numbers %}
+            {% if n > 20 %}
+            <div>
+                {{n}}
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endblock %}
